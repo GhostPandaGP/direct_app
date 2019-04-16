@@ -1,0 +1,19 @@
+.is_nav
+{
+    display: block;
+}
+
+.is_not_nav
+{
+    display: none;
+}
+
+.is_ul
+{
+    display: block;
+}
+
+.is_not_ul
+{
+    display: none;
+}
