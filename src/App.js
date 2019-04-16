@@ -35,38 +35,41 @@ class App extends React.Component {
                 <div>
                     <OpenButton onClick={() => this.changeStateNav()}/>
                     {/*<button onClick={this.changeStateNav}>X</button>*/}
-                    <nav className={open_nav}>
-                        <ul>
-                            <li>
-                                <Link to="/profile">Profile</Link>
-                            </li>
-                            <li>
-                                <Link to="/wordstat">Wordstat</Link>
-                            </li>
-                            <li>
-                                <Link to="/direct">Direct</Link>
-                            </li>
-                            <li>
-                                <Link to="/metric">Metric</Link>
-                            </li>
-                            <li>
-                                <a href="#" onClick={() => this.changeStateUl()}>Dashboards</a>
-                                <ul className={open_ul}>
-                                    <li>
-                                        Dashboard1
-                                    </li>
-                                    <li>
-                                        Dashboard2
-                                    </li>
-                                    <li>
-                                        Dashboard3
-                                    </li>
-                                    <li>
-                                        Dashboard4
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                    {/*<Nav navClass={open_nav}/>*/}
+                    <nav id={open_nav} className={" col-md-2 d-none d-md-block bg-light sidebar"}>
+                        <div className="sidebar-content">
+                            <ul>
+                                <li>
+                                    <Link to="/profile">Profile</Link>
+                                </li>
+                                <li>
+                                    <Link to="/wordstat">Wordstat</Link>
+                                </li>
+                                <li>
+                                    <Link to="/direct">Direct</Link>
+                                </li>
+                                <li>
+                                    <Link to="/metric">Metric</Link>
+                                </li>
+                                <li>
+                                    <a href="#" onClick={() => this.changeStateUl()}>Dashboards</a>
+                                    <ul className={open_ul}>
+                                        <li>
+                                            Dashboard1
+                                        </li>
+                                        <li>
+                                            Dashboard2
+                                        </li>
+                                        <li>
+                                            Dashboard3
+                                        </li>
+                                        <li>
+                                            Dashboard4
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                     <main>
                         <Route exact path="/profile" component={Profile} />

@@ -1,19 +1,19 @@
-.is_nav
+#is_nav
 {
-    display: block;
+    display: block !important;
 }
 
-.is_not_nav
+#is_not_nav
 {
-    display: none;
+    display: none !important;
 }
 
 .is_ul
 {
-    display: block;
+    display: block !important;
 }
 
 .is_not_ul
 {
-    display: none;
+    display: none !important;
 }
