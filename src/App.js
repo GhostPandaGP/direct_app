@@ -1,6 +1,7 @@
 import React from 'react';
 import OpenButton from './components/OpenButton';
 import './app.css';
+import Nav from './components/Nav';
 import Profile from './components/Profile';
 import Direct from './components/Direct';
 import Metric from './components/Metric';
@@ -26,6 +27,36 @@ class App extends React.Component {
         this.setState({ul_open: !this.state.ul_open});
     };
 
+    getJson = async () => {
+        const api_key = 'd35450dea349ef9099a409df5e5a5e97';
+        const uri = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${api_key}`;
+        //const uri = "./total4.json";
+        let h = new Headers();
+        h.append('Accept', 'app');
+
+        let req = new Request(uri, {
+            method: 'GET',
+            headers: h,
+            mode: 'cors'
+        });
+        const r = await fetch(req)
+            .then((response) => {
+                if (response.ok) {
+                    console.log("---", response.json());
+                    return response.json();
+                } else {
+                    throw new Error('BAD HTTP stuff');
+                }
+        })
+            .then( (jsonData) => {
+            })
+            .catch( (err) => {
+                console.log('Error', err.message);
+            });
+        //const data = await r.json();
+        console.log("data:", r);
+    };
+
     render() {
         const open_nav = this.state.nav_open? 'is_nav': 'is_not_nav';
         const open_ul = this.state.ul_open? 'is_ul': 'is_not_ul';
@@ -34,11 +65,14 @@ class App extends React.Component {
             <Router>
                 <div>
                     <OpenButton onClick={() => this.changeStateNav()}/>
+                    <button onClick={() => {this.getJson()}}>Button</button>
                     {/*<button onClick={this.changeStateNav}>X</button>*/}
-                    {/*<Nav navClass={open_nav}/>*/}
+                    <Nav navClass={open_nav}>something text </Nav>
+
                     <nav id={open_nav} className={" col-md-2 d-none d-md-block bg-light sidebar"}>
                         <div className="sidebar-content">
                             <ul>
+                                {}
                                 <li>
                                     <Link to="/profile">Profile</Link>
                                 </li>

@@ -19,7 +19,8 @@ class Nav extends React.Component{
         const open_ul = this.state.ul_open? 'is_ul': 'is_not_ul';
 
         return (
-            <nav>
+            <nav id={this.props.navClass}>
+                {this.props.children}
                 <ul>
                     <li>
                         <Link to="/profile">Profile</Link>
