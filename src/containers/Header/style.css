@@ -1,0 +1,44 @@
+/*header {*/
+    /*box-shadow: ;*/
+/*}*/
+header .header
+{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .profile
+{
+    padding: 8px;
+    border-left: #7f8c8d solid 1px;
+    font-size: 20px;
+}
+
+
+header .header .profile > i
+{
+    color: #222;
+    cursor: pointer;
+}
+header .header .profile span
+{
+    padding: 5px;
+    margin-left: 15px;
+    color: #222;
+    cursor: pointer;
+}
+header .header .profile > i:hover, header .header .profile > span:hover
+{
+    color: #7f8c8d;
+}
+header .header .info
+{
+    padding: 5px 15px;
+}
+header .header .info span
+{
+    color: #34495e;
+    font-style: italic;
+}
